@@ -33,31 +33,36 @@
     font-family: var(--font-family);
   }
 
-  .card-div{
+  .card-div {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    flex-wrap: wrap; /* added */
+    justify-content: center; /* modified */
     align-items: center;
     margin: 0 auto;
-    width: 100vh;
     height: 100vh;
+    max-width: 100%; 
     background-color: var(--white);
+    padding: 1rem; 
+    box-sizing: border-box;
   }
+  .card-result-section, 
+.card-summary-section {
+  width: 100%;
+  height: 100%;  
+  max-width: 500px;
+  max-height: 650px;
+  border-radius: 10%;
+  margin: 0 0 1rem 0;
+  flex: 1 0 auto;
+}
+  
   .card-result-section{
     display: flex;
-    position: absolute;
-    top: 2rem;
-    left:2rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20 auto;
-    width: 100vh;
-    max-width: 500px;
-    height: 100vh;
-    max-height: 650px;
-    background:linear-gradient(var(--light-slate-blue) 20%, var(--light-royal-blue));
-    border-radius:10%;
+    background: linear-gradient(var(--light-slate-blue) 20%, var(--light-royal-blue));
   }
   .card-header {
     color: var(--pale-blue);
@@ -113,14 +118,7 @@
     display: flex;
     flex-direction: column;
     position:relative;
-    left:8%;
     z-index: 0;
-    margin: 20px auto;
-    width: 100%;
-    max-width: 500px;
-    height: 100%;
-    max-height: 650px;
-    border-radius: 10%;
     box-shadow: 0 0 10px 0 rgba(0, 0, 255, 0.1);
     background-color: var(--white);
   }
@@ -193,6 +191,12 @@
     cursor: pointer;
     text-decoration: none;
   }
+  .card-button:hover{
+    background: linear-gradient(var(--light-slate-blue) 20%, var(--light-royal-blue));
+    color: white;
+    border: 2px solid linear-gradient(var(--light-slate-blue) 20%, var(--light-royal-blue));
+
+  }
   
 
 
@@ -206,59 +210,81 @@
   }
   .card-item-container:nth-of-type(3){
   border-color: hsl(120, 100%, 75%);
-  background-color: hsla(120, 100%, 75%, 0.1);
+  background-color: hsla(120, 100%, 75%, 0.08);
   }
 
   .card-item-container:nth-of-type(4){
     border-color: hsl(210, 100%, 50%);
     background-color: hsla(210, 100%, 50%, 0.1);
+  }
 
-  
+  .card-item-container:nth-of-type(1) .card-item-header {
+    color: hsl(0, 100%, 67%);
+}
+  .card-item-container:nth-of-type(2) .card-item-header {
+    color: hsl(39, 100%, 56%);
+}
+  .card-item-container:nth-of-type(3) .card-item-header{
+    color: hsla(120, 100%, 75%,0.9);
+  }
+  .card-item-container:nth-of-type(4) .card-item-header{
+    color: hsl(210, 100%, 50%);
   }
 
   
  
   @media (max-width: 767px) {
-  .card-div {
-    height: auto;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .card-summary-section {
-    order: -2;
-    height: 100%;
-    margin: 108% auto;
-    justify-content: center;
-    left: 0;
-    position: relative;
-    overflow: hidden;
-  }
-
+    .card-div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      box-sizing: border-box; 
+    }
+  
+    .card-summary-section,
   .card-result-section {
-    order: -1;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 0;
-    left: 10%;
-    overflow: hidden;
-    position: absolute;
-    justify-content: center;
+    width: 80%;
   }
-
-  .card-summary-header {
-    font-size: 16px;
-    margin-top: 5rem;
+  
+    .card-summary-section {
+      order: 2;
+      height: auto;
+    }
+  
+    .card-result-section {
+      order: 1;
+      height: auto;
+      margin-bottom: 0;
+    }
+  
+    .card-summary-header {
+      font-size: 16px;
+      margin-top: 5rem;
+    }
+  
+    .card-item-header {
+      font-size: 12px;
+      margin-right: 1rem;
+      width: 60%;
+    }
+  
+    .card-item-icon {
+      width: 10%;
+      height: 10%;
+      border-radius: 10%;
+    }
+    .card-item-score{
+      font-size: 12px;
+    }
+    .card-item-score-not-bold{
+      font-size: 12px;
+    }
   }
-
-  .card-item-header {
-    font-size: 12px;
-    margin-right: 1rem;
-    width: 60%;
-  }
-}
+  
 
   
   
@@ -267,4 +293,4 @@
 
 
 .attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }r
+.attribution a { color: hsl(228, 45%, 44%); }

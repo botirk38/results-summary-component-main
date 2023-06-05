@@ -12,13 +12,16 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 
 ### Screenshot
-
-![Results summary component](project-imgs/solution.png)
+#### Desktop View
+![Results summary component](project-imgs/desktop-view.png)
+#### Mobile View
+![Results summary component](project-imgs/mobile-view.png)
+#### Active State
+![Results summary component](project-imgs/active-states.png)
 
 ### Links
 
 - Solution URL: (https://your-solution-url.com)
-- Live Site URL: (https://your-live-site-url.com)
 
 ## My process
 
@@ -38,22 +41,72 @@ Here's an example of the CSS code I'm proud of:
 
 ```css
 .card-summary-section {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  left: 8%;
-  z-index: 0;
-  margin: 20px auto;
-  width: 100%;
-  max-width: 500px;
-  height: 100%;
-  max-height: 650px;
-  border-radius: 10%;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 255, 0.1);
-  background-color: var(--white);
+   @media (max-width: 767px) {
+    .card-div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      box-sizing: border-box; 
+    }
+  
+    .card-summary-section,
+  .card-result-section {
+    width: 80%;
+  }
+  
+    .card-summary-section {
+      order: 2;
+      height: auto;
+    }
+  
+    .card-result-section {
+      order: 1;
+      height: auto;
+      margin-bottom: 0;
+    }
+  
+    .card-summary-header {
+      font-size: 16px;
+      margin-top: 5rem;
+    }
+  
+    .card-item-header {
+      font-size: 12px;
+      margin-right: 1rem;
+      width: 60%;
+    }
+  
+    .card-item-icon {
+      width: 10%;
+      height: 10%;
+      border-radius: 10%;
+    }
+    .card-item-score{
+      font-size: 12px;
+    }
+    .card-item-score-not-bold{
+      font-size: 12px;
+    }
+  }
 }
 ```
-This code snippet defines the styles for a card element with the class .card-summary-section. The card is displayed as a flex container with a column direction, positioned relatively, and has a left offset of 8%. It has a z-index of 0, a margin of 20 pixels on the top and bottom, and occupies the full width and height of its container, with maximum dimensions of 500px width and 650px height. The card has a border radius of 10%, a box shadow for a subtle effect, and a background color defined by the --white CSS variable.
+This code snippet demonstrates the CSS styles for a responsive card component (card-summary-section). It utilizes a media query to adapt to screens with a maximum width of 767 pixels.
+
+Inside the media query, the card's layout is adjusted for smaller screens. The card-div element becomes a flex container with a column direction, allowing items to stack vertically.
+
+The card-summary-section and card-result-section are set to a width of 80% to maximize space usage. The card-summary-section has an order of 2 to appear below card-result-section.
+
+Typography adjustments include smaller font sizes for card-summary-header and card-item-header. The card-item-header has a margin-right of 1rem and a width of 60% to provide spacing and enable text wrapping.
+
+The card-item-icon has a circular shape with a width and height of 10% and a border radius of 10%.
+
+card-item-score and card-item-score-not-bold have smaller font sizes for better readability.
+
+This code snippet serves as a reference for creating responsive card components.
 
 ## Continued development
 
