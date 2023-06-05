@@ -37,14 +37,23 @@ During this project, I learned how to use CSS Grid to create a responsive layout
 Here's an example of the CSS code I'm proud of:
 
 ```css
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.card-summary-section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 8%;
+  z-index: 0;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  max-height: 650px;
+  border-radius: 10%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 255, 0.1);
+  background-color: var(--white);
 }
-```
 
-This code snippet creates a responsive grid layout where each column has a minimum width of 300px and expands to fill the available space evenly. The auto-fit value allows the grid to create as many columns as possible based on the available space.
+This code snippet defines the styles for a card element with the class .card-summary-section. The card is displayed as a flex container with a column direction, positioned relatively, and has a left offset of 8%. It has a z-index of 0, a margin of 20 pixels on the top and bottom, and occupies the full width and height of its container, with maximum dimensions of 500px width and 650px height. The card has a border radius of 10%, a box shadow for a subtle effect, and a background color defined by the --white CSS variable.
 
 ## Continued development
 
