@@ -13,7 +13,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Results summary component](./screenshot.jpg)
+![Results summary component](project-imgs/solution.png)
 
 ### Links
 
